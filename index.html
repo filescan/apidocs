@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=11' />
+    <title>FileScan API documentation</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='css/base.css' rel='stylesheet' />
+    <link href='css/style.css' rel='stylesheet' />
+    <link href='css/railscasts.css' rel='stylesheet' />
+  </head>
+  <body>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot="" data-reactid="1" data-react-checksum="-1323141960"><div class="fixed-top fixed-right space-left16" data-reactid="2"><div class="fill-light col6 pin-right" data-reactid="3"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark" data-reactid="4"><div class="pad0x small" data-reactid="5"><div class="small pad0x quiet space-top1" data-reactid="6">Introduction</div><a href="#our-api" class="line-height15 pad0x pad00y quiet block " data-reactid="7">Our API</a><div class="small pad0x quiet space-top1" data-reactid="8">API Keys</div><a href="#api-keys-1" class="line-height15 pad0x pad00y quiet block " data-reactid="9">API Keys</a><div class="small pad0x quiet space-top1" data-reactid="10">Projects</div><a href="#projects-1" class="line-height15 pad0x pad00y quiet block " data-reactid="11">Projects</a></div></div><div class="space-left16" data-reactid="12"><div class="" data-reactid="13"><div class="clearfix" data-reactid="14"><div data-title="Our API" class="keyline-top section contain clearfix " data-reactid="15"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="16"><h2 id="our-api">Our API</h2>
+<p>Welcome to FileScan API documentation!</p>
+<p>Base URL for our API is <code>https://api.filescan.dev/v1/</code></p>
+</div></div><div data-title="API Keys" class="keyline-top section contain clearfix " data-reactid="17"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="18"><h2 id="api-keys-1">API Keys</h2>
+<p>This is API keys documentation. You can use this API to request
+for details on API keys.</p>
+</div></div><div data-title="Check API calls limit" class="keyline-top section contain clearfix " data-reactid="19"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="20"><h3 id="check-api-calls-limit">Check API calls limit</h3>
+<p>Check API calls limit left</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="21"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/v1/api_keys</div>
+    </div>
+<h4 id="example-request">Example request</h4>
+<pre class='hljs'>$ curl https://api.filescan.dev/v1/api_keys</pre>
+<h4 id="example-response">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"attributes"</span>: {
+            <span class="hljs-attr">"limit_left"</span>: <span class="hljs-number">9</span>,
+            <span class="hljs-attr">"secret_key"</span>: <span class="hljs-string">"sk_fcca1eb92d8452962fcf2d8905f4f5ef"</span>
+        },
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"relationships"</span>: {
+            <span class="hljs-attr">"project"</span>: {
+                <span class="hljs-attr">"data"</span>: {
+                    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"project"</span>
+                }
+            },
+            <span class="hljs-attr">"user"</span>: {
+                <span class="hljs-attr">"data"</span>: {
+                    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"user"</span>
+                }
+            }
+        },
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"api_key"</span>
+    }
+}</pre>
+</div></div><div data-title="Projects" class="keyline-top section contain clearfix " data-reactid="22"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="23"><h2 id="projects-1">Projects</h2>
+<p>This is projects API documentation. You can use this API to request
+for details and remove different projects.</p>
+</div></div><div data-title="List projects" class="keyline-top section contain clearfix " data-reactid="24"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="25"><h3 id="list-projects">List projects</h3>
+<p>Lists all scans for a particular account.</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="26"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/v1/projects</div>
+    </div>
+<h4 id="example-request-1">Example request</h4>
+<pre class='hljs'>$ curl https://api.filescan.dev/v1/projects</pre>
+<h4 id="example-response-1">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"data"</span>: [
+        {
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"api_limit"</span>: <span class="hljs-number">20</span>,
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"test"</span>,
+                <span class="hljs-attr">"usage_count"</span>: <span class="hljs-number">11</span>
+            },
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+            <span class="hljs-attr">"relationships"</span>: {
+                <span class="hljs-attr">"user"</span>: {
+                    <span class="hljs-attr">"data"</span>: {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"user"</span>
+                    }
+                }
+            },
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"project"</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="Retrieve a project" class="keyline-top section contain clearfix " data-reactid="27"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="28"><h3 id="retrieve-a-project">Retrieve a project</h3>
+<p>Returns a single project.</p>
+<p>Retrieve information about an existing project.</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="29"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/v1/projects/<span class="strong">{project_id}</span></div>
+    </div>
+<h4 id="example-request-2">Example request</h4>
+<pre class='hljs'>curl https://api.filescan.dev/v1/{project_id}</pre>
+<h4 id="example-response-2">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"attributes"</span>: {
+            <span class="hljs-attr">"api_limit"</span>: <span class="hljs-number">20</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"test"</span>,
+            <span class="hljs-attr">"usage_count"</span>: <span class="hljs-number">11</span>
+        },
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"relationships"</span>: {
+            <span class="hljs-attr">"user"</span>: {
+                <span class="hljs-attr">"data"</span>: {
+                    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"user"</span>
+                }
+            }
+        },
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"project"</span>
+    }
+}</pre>
+</div></div><div data-title="Update a project" class="keyline-top section contain clearfix " data-reactid="30"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="31"><h3 id="update-a-project">Update a project</h3>
+<p>Updates the properties of a particular project.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>(optional) the name of the project</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="32"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PATCH</div>
+      <div class='pad0 code small endpoint-url'>/v1/projects/<span class="strong">{project_id}</span></div>
+    </div>
+<h4 id="example-request-3">Example request</h4>
+<pre class='hljs'>curl --request PATCH https://api.filescan.dev/v1/projects/{project_id} \
+  -d @data.json</pre>
+<h4 id="example-request-body">Example request body</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"foo"</span>,
+}</pre>
+<h4 id="example-response-3">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"attributes"</span>: {
+            <span class="hljs-attr">"api_limit"</span>: <span class="hljs-number">20</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"foo"</span>,
+            <span class="hljs-attr">"usage_count"</span>: <span class="hljs-number">11</span>
+        },
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+        <span class="hljs-attr">"relationships"</span>: {
+            <span class="hljs-attr">"user"</span>: {
+                <span class="hljs-attr">"data"</span>: {
+                    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"user"</span>
+                }
+            }
+        },
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"project"</span>
+    }
+}</pre>
+</div></div><div data-title="List scans" class="keyline-top section contain clearfix " data-reactid="33"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="34"><h3 id="list-scans">List scans</h3>
+<p>List all the scans in a project. The response body will be a
+ScanCollection.</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="35"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/v1/projects/<span class="strong">{project_id}</span>/scans</div>
+    </div>
+<h4 id="example-request-4">Example request</h4>
+<pre class='hljs'>curl https://api.filescan.dev/v1/projects/{project_id}/scans</pre>
+<h4 id="example-response-4">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"data"</span>: [
+        {
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2019-07-12T09:24:15.475Z"</span>,
+                <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"index.html"</span>,
+                <span class="hljs-attr">"scan_details"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+            },
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"17"</span>,
+            <span class="hljs-attr">"relationships"</span>: {
+                <span class="hljs-attr">"project"</span>: {
+                    <span class="hljs-attr">"data"</span>: {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"project"</span>
+                    }
+                },
+                <span class="hljs-attr">"user"</span>: {
+                    <span class="hljs-attr">"data"</span>: {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"user"</span>
+                    }
+                }
+            },
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"scan"</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="Retrieve a scan" class="keyline-top section contain clearfix " data-reactid="36"><div class="space-bottom8 col6 pad2x prose clip" data-reactid="37"><h3 id="retrieve-a-scan">Retrieve a scan</h3>
+<p>Retrieves a scan in a project.</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5" data-reactid="38"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/v1/projects/<span class="strong">{project_id}</span>/scans/<span class="strong">{scan_id}</span></div>
+    </div>
+<h4 id="example-request-5">Example request</h4>
+<pre class='hljs'>curl https:///api.filescan.dev/v1/projects/{project_id}/scans/{scan_id}</pre>
+<h4 id="example-response-5">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"data"</span>: {
+        <span class="hljs-attr">"attributes"</span>: {
+            <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2019-07-12T09:24:15.475Z"</span>,
+            <span class="hljs-attr">"filename"</span>: <span class="hljs-string">"index.html"</span>,
+            <span class="hljs-attr">"scan_details"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"status"</span>: <span class="hljs-string">"OK"</span>
+        },
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"17"</span>,
+        <span class="hljs-attr">"relationships"</span>: {
+            <span class="hljs-attr">"project"</span>: {
+                <span class="hljs-attr">"data"</span>: {
+                    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"project"</span>
+                }
+            },
+            <span class="hljs-attr">"user"</span>: {
+                <span class="hljs-attr">"data"</span>: {
+                    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"user"</span>
+                }
+            }
+        },
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"scan"</span>
+    }
+}</pre>
+</div></div></div></div></div><div class="fixed-top space-left16" data-reactid="39"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  " data-reactid="40"><div class="space-right1 small quiet inline" data-reactid="41">Show examples in:</div><div class="rounded-toggle inline short" data-reactid="42"><a class="strong active" data-reactid="43">cURL</a><a class="strong " data-reactid="44">cli</a><a class="strong " data-reactid="45">Python</a><a class="strong " data-reactid="46">JS</a><a class="strong " data-reactid="47">Java</a><a class="strong " data-reactid="48">ObjC</a><a class="strong " data-reactid="49">Swift</a><a class="strong " data-reactid="50"></a></div><div class="fr pad0" data-reactid="51"><a title="Display as 1 column" style="cursor:pointer;" class="icon quiet caret-left pad0 fill-darken0 round" data-reactid="52"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16" data-reactid="53"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-red" data-reactid="54"></a><div class="strong small pad0
+          
+          space-left4 line-height15" data-reactid="55">FileScan API Documentation</div></div></div></div><!--STOP-->
+    <script src='bundle.js'></script>
+  </body>
+</html>
