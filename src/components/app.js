@@ -32,7 +32,9 @@ let languageOptions = [
     value: 'objc' },
   { title: 'Swift',
     short: 'Swift',
-    value: 'swift' }
+    value: 'swift' },
+  { title: 'Ruby',
+    value: 'ruby' }
 ];
 
 let defaultLanguage = languageOptions[0];
